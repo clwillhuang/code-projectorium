@@ -1,0 +1,42 @@
+components:
+  UserRegisterPost:
+    properties:
+      username:
+        type: string
+        example: John Doe
+        required: true 
+      email:
+        type: string
+        format: email
+        example: john@example.com
+        required: true
+      password:
+        type: string
+        example: dummyPassword123
+        required: true
+
+  UserLoginPost:
+    properties:
+      username:
+        type: string
+        example: John Doe
+        required: true 
+      password:
+        type: string
+        example: dummyPassword123
+        required: true
+
+  RegistrationResult:
+    properties:
+      usernameValid:
+        description: Was the submitted username valid?
+        type: boolean
+        example: true
+      emailValid:
+        description: Was the submitted email valid?
+        type: boolean
+        example: true
+      passwordValid:
+        description: Was the submitted password of valid format?
+        type: boolean
+        example: true

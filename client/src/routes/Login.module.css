@@ -1,0 +1,16 @@
+.container {
+    margin: 10% auto auto auto;
+    width: min(100%, 700px);
+}
+
+.submitButton {
+    margin: 10px 0;
+}
+
+.link {
+    margin: 10px 0;
+}
+
+.form label {
+    margin: 5px auto;
+}

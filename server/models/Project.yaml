@@ -1,0 +1,101 @@
+components:
+  ProjectPost:
+    properties:
+      name:
+        type: string
+        example: Tutorial One
+        required: true
+      description: 
+        type: string
+        example: An introduction to JavaScript
+        maxLength: 140
+        required: true
+
+  ProjectPatch:
+    properties:
+      name:
+        type: string
+        example: Tutorial One
+      description: 
+        type: string
+        example: An introduction to JavaScript
+        maxLength: 140
+      published:
+        type: boolean
+        example: true
+
+  Project:
+    properties:
+      _id: 
+        type: string
+        example: 63b074809d1dd1fa0b7cea75
+      published: 
+        type: boolean
+        example: true
+      user:
+        type: string
+        example: 63b074809d1dd1fa0b7cea76
+      name:
+        type: string
+        example: Tutorial One
+      description: 
+        type: string
+        example: An introduction to JavaScript
+        maxLength: 140
+      __v:
+        type: integer
+        example: 0
+
+  ProjectWithUser:
+    properties:
+      _id: 
+        type: string
+        example: 63b074809d1dd1fa0b7cea75
+      published: 
+        type: boolean
+        example: true
+      user:
+        type: string
+        example: 63b074809d1dd1fa0b7cea76
+      name:
+        type: string
+        example: Tutorial One
+      description: 
+        type: string
+        example: An introduction to JavaScript
+        maxLength: 140
+      __v:
+        type: integer
+        example: 0
+      username:
+        type: string
+        example: "John Doe"
+
+  ProjectWithUserAndPages:
+    properties:
+      _id: 
+        type: string
+        example: 63b074809d1dd1fa0b7cea75
+      published: 
+        type: boolean
+        example: true
+      user:
+        type: string
+        example: 63b074809d1dd1fa0b7cea76
+      name:
+        type: string
+        example: Tutorial One
+      description: 
+        type: string
+        example: An introduction to JavaScript
+        maxLength: 140
+      __v:
+        type: integer
+        example: 0
+      username:
+        type: string
+        example: "John Doe"
+      pages:
+        type: array
+        items:
+          $ref: "#/components/Page"

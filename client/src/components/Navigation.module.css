@@ -1,0 +1,8 @@
+.navigationBar {
+    padding: 8px auto;
+    z-index: 50;
+}
+
+.loginName {
+    margin: 0 15px;
+}

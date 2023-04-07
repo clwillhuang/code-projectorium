@@ -1,0 +1,72 @@
+components:
+  Page:
+    properties:
+      _id: 
+        type: string
+        example: 63b074809d1dd1fa0b7caa90
+      project:
+        type: string
+        example: 63b074809d1dd1fa0b7aaaaa
+        required: true
+      title:
+        type: string
+        example: "Project Quickstart"
+        required: true
+      __v:
+        type: integer
+        example: 0
+
+  PagePost:
+    properties:
+      title:
+        type: string
+        example: "New page 1"
+        required: true
+
+  PagePatch:
+    properties:
+      title:
+        type: string
+        example: "Updated page title"
+        required: true
+
+  PageWithUser:
+    properties:
+      _id: 
+        type: string
+        example: 63b074809d1dd1fa0b7caa90
+      project:
+        type: string
+        example: 63b074809d1dd1fa0b7aaaaa
+        required: true
+      title:
+        type: string
+        example: "Project Quickstart"
+        required: true
+      username:
+        type: string
+        example: "John Doe"
+      __v:
+        type: integer
+        example: 0
+
+  PageWithSnippets:
+    properties:
+      _id: 
+        type: string
+        example: 63b074809d1dd1fa0b7caa90
+      project:
+        type: string
+        example: 63b074809d1dd1fa0b7aaaaa
+        required: true
+      title:
+        type: string
+        example: "Project Quickstart"
+        required: true
+      __v:
+        type: integer
+        example: 0
+      snippets:
+        type: array
+        items:
+          $ref: "#/components/Snippet"

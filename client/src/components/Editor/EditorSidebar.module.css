@@ -1,0 +1,41 @@
+.pageSidebar {
+    margin: 0;
+    width: 20vw;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    border-right: 3px ridge var(--pageLayoutBorderColor);
+    padding: 10px;
+}
+
+.addButton {
+    display: flex;
+    align-items: center;
+}
+
+.linkList {
+    margin-top: 10px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pageLink, .pageLinkSelected {
+    background-color: transparent;
+    color: white;
+    border: none;
+    /* border: 1px solid rgb(132, 132, 132); */
+    border-radius: 5px;
+    text-align: left;
+    margin: 5px 0;
+    width: 100%;
+    padding: 0;
+}
+
+.pageLinkSelected {
+    font-weight: bold;
+}
+
+.pageLink:hover {
+    text-decoration: underline;
+}

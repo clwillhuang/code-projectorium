@@ -1,0 +1,13 @@
+.card {
+    background-color: #0d1117;
+    margin: 10px 0;
+    border: 2px ridge var(--snippetCardColor);
+}
+
+.card button {
+    margin: 0 5px;
+}
+
+.body {
+    color: white;
+}

@@ -1,0 +1,112 @@
+components:
+
+  SnippetPost:
+    properties:
+      markdown:
+        type: string
+        example: '# Install required packages'
+        default: ''
+      code:
+        type: string
+        example: 'npm install express'
+        default: ''
+      language:
+        type: string
+        default: plaintext
+        enum: ['plaintext', 'javascript', 'python']
+      showCode: 
+        type: boolean
+        default: true
+      showMarkdown: 
+        type: boolean
+        default: true
+
+  SnippetPatch:
+    anyOf:
+      markdown:
+        type: string
+        example: '# Install required packages'
+      code:
+        type: string
+        example: 'npm install express'
+      language:
+        type: string
+        default: plaintext
+        enum: ['plaintext', 'javascript', 'python']
+      showCode: 
+        type: boolean
+        example: true
+      showMarkdown: 
+        type: boolean
+        example: true
+
+  Snippet:
+    properties:
+      _id:
+        type: string
+        example: 63b074809d1dd1fa0b7caa91
+      project:
+        type: string
+        example: 63b074809d1dd1fa0b7aaaaa
+        required: true
+      page:
+        type: string
+        example: 63b074809d1dd1fa0b7caa90
+        required: true
+      markdown:
+        type: string
+        default: '# Install required packages'
+      code:
+        type: string
+        default: 'npm install express'
+      language:
+        type: string
+        default: plaintext
+        enum: ['plaintext', 'javascript', 'python']
+      showCode: 
+        type: boolean
+        default: true
+      showMarkdown: 
+        type: boolean
+        default: true
+      __v:
+        type: integer
+        example: 0
+
+  SnippetWithComments:
+    properties:
+      _id:
+        type: string
+        example: 63b074809d1dd1fa0b7caa91
+      project:
+        type: string
+        example: 63b074809d1dd1fa0b7aaaaa
+        required: true
+      page:
+        type: string
+        example: 63b074809d1dd1fa0b7caa90
+        required: true
+      markdown:
+        type: string
+        default: '# Install required packages'
+      code:
+        type: string
+        default: 'npm install express'
+      language:
+        type: string
+        default: plaintext
+        enum: ['plaintext', 'javascript', 'python']
+      showCode: 
+        type: boolean
+        default: true
+      showMarkdown: 
+        type: boolean
+        default: true
+      __v:
+        type: integer
+        example: 0
+      comments:
+        type: array
+        items: 
+          $ref: "#/components/CommentWithUser"
+

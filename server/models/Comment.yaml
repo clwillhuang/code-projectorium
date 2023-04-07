@@ -1,0 +1,78 @@
+components:
+
+  CommentPost:
+    properties:
+      markdown:
+        type: string
+        required: true
+        example: "**This snippet was very informative!** Thank you!"
+        minLength: 15
+
+  Comment:
+    properties:
+      _id:
+        type: string
+        example: 63b074809d1dd1fa0b7cadd2
+      project:
+        type: string
+        example: 63b074809d1dd1fa0b7aaaaa
+        required: true
+      page:
+        type: string
+        example: 63b074809d1dd1fa0b7caa90
+        required: true
+      snippet:
+        type: string
+        example: 63b074809d1dd1fa0b7caa91
+        required: true
+      markdown:
+        type: string
+        default: ''
+        example: "**This snippet was very informative!** Thank you!"
+        minLength: 15
+      posted:
+        type: string
+        example: 2022-02-10T12:34:56.123Z
+        format: date-time
+      poster:
+        type: string
+        example: "John Doe"
+        required: true
+      __v:
+        type: integer
+        example: 0
+
+  CommentWithUser:
+    properties:
+      _id:
+        type: string
+        example: 63b074809d1dd1fa0b7cadd2
+      project:
+        type: string
+        example: 63b074809d1dd1fa0b7aaaaa
+        required: true
+      page:
+        type: string
+        example: 63b074809d1dd1fa0b7caa90
+        required: true
+      snippet:
+        type: string
+        example: 63b074809d1dd1fa0b7caa91
+        required: true
+      markdown:
+        type: string
+        default: ''
+        minLength: 15
+      posted:
+        type: string
+        example: 2022-02-10T12:34:56.123Z
+        format: date-time
+      poster:
+        type: string
+        example: 63abb150ce91ac94d73f34a6
+      username:
+        type: string
+        example: John Doe
+      __v:
+        type: integer
+        example: 0

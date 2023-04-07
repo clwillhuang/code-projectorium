@@ -1,0 +1,9 @@
+.card {
+    background-color: #0d1117;
+    margin: 20px 0;
+    border: 2px ridge var(--snippetCardColor);
+}
+
+.body {
+    color: white;
+}

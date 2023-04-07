@@ -1,0 +1,21 @@
+.container {
+    width: 100%;
+    display: inline-flex;
+}
+
+.side {
+    width: 50%;
+    text-align: center;
+    margin: 0 20px;
+}
+
+.side button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+.side button:hover {
+    text-decoration: underline;
+}

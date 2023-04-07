@@ -1,0 +1,44 @@
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.title > svg {
+    margin-left: 10px;
+}
+
+.title:hover {
+    cursor: pointer;
+    font-weight: bold;
+    
+}
+
+.titleForm {
+    margin: 10px auto;
+}
+
+.titleEditor {
+    display: flex;
+    flex-direction: row;
+}
+
+.titleEditor > button {
+    display: flex;
+    align-items: center;
+}
+
+.titleEditor > button > svg {
+    margin-right: 5px;
+}
+
+.titleEditor > label {
+    color: white;
+    margin: 0 10px;
+    align-self: center;
+}
+
+.titleEditor > input {
+    margin-right: 10px;
+    width: max(70%, 100px);
+}

@@ -1,0 +1,16 @@
+{
+    "definition": {
+        "openapi": "3.0.0",
+        "info": {
+            "title": "Code Projectorium API",
+            "version": "0.0.1",
+            "description": "An Express API used to create and share software projects."
+        },
+        "servers": [
+            {
+                "url": "http://localhost:5000"
+            }
+        ]
+    },
+    "apis": ["./routes/*.js"]
+}

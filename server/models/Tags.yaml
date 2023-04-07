@@ -1,0 +1,13 @@
+tags:
+  - name: authentication
+    description: Enables cookie-based session authentication.
+  - name: projects
+    description: A project is a collection of pages that is created by a user that can be published publicly.
+  - name: pages
+    description: A page forms part of a project and is a collection of snippets.
+  - name: snippets
+    description: A snippet forms part of a page and contains markdown and/or code text.
+  - name: comments
+    description: Everything about user comments posted to snippets.
+  - name: published projects
+    description: Access projects published to the public by their creators.

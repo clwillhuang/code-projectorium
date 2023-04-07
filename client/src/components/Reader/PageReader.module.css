@@ -1,0 +1,36 @@
+.pageEditor {
+    margin: 0;
+    width: 80vw;
+    max-height: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.title > svg {
+    margin-left: 10px;
+}
+
+.snippetList {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonRow {
+    display: flex;
+}
+
+.buttonRow > button {
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+}
+
+.emptyMessage {
+    padding: 25px 15px;
+}

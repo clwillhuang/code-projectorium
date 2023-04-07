@@ -1,0 +1,14 @@
+.buttonRow {
+    margin: 10px 0 5px 0;
+    display: inline-flex;
+}
+
+.buttonRow button {
+    margin: 0 2.5px;
+    display: flex;
+    align-items: center;
+}
+
+.buttonRow svg {
+    margin-right: 5px;
+}

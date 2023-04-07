@@ -1,0 +1,23 @@
+.header {
+    border-bottom: 3px ridge var(--pageLayoutBorderColor);
+    display: flex;
+}
+
+.headerText {
+    width: 75%;
+}
+
+.headerButton {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.headerButton button {
+    margin: 2.5px;
+    width: min(100%, 150px);
+    height: min-content;
+}

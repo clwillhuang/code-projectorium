@@ -1,0 +1,11 @@
+.contentRow {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    flex: 1 1 auto;
+    margin: 0px 25px;
+}
+
+.header {
+    border-bottom: 3px ridge var(--pageLayoutBorderColor);
+}
