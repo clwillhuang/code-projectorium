@@ -1,8 +1,8 @@
 # Code Projectorium
 
-Code Projectorium is a full-stack web application allowing users to share their coding projects online. Each project is composed of multiple pages, and each page is made of multiple snippets. This way, project authors can walkthrough their code page by page and snippet by snippet, with viewers being able to comment on each specific snippet to pose their questions or thoughts.
+Code Projectorium is a full-stack web application that allows users to share their coding projects online. Each project is composed of multiple pages, and each page is made of multiple snippets. This way, project authors can go through their code page by page and snippet by snippet, with viewers being able to comment on each specific snippet to pose their questions or thoughts. This closely mirrors the layout of traditional online documentation API documentation made.
 
-The website is split into the back-end REST API, located in the [client](./client/) folder, and the front-end website, located in the [server/](./server/) folder.
+The website is split into the front-end web client, located in the [client](./client/) folder, and the back-end API, located in the [server/](./server/) folder.
 
 ## The Software Stack
 
@@ -17,7 +17,7 @@ The tools used for developing the server and front-end website were selected aro
 
 ## Why?
 
-This was a mainly a personal project to develop my skills in the MERN stack (MongoDB, Express, React, Node), a popular combination of software tools used to develop modern web applications. I tackled concepts such as implementing user authentication in Passport, working with database updates and deletions with hooks in MongoDB/Mongoose, and writing effective documentation for output to Swagger.
+This was mainly a personal project to develop my skills in the MERN stack (MongoDB, Express, React, Node), a popular combination of software tools used to develop modern web applications. I tackled concepts such as implementing user authentication in Passport, working with database updates and deletions with hooks in MongoDB/Mongoose, and writing effective documentation for output to Swagger.
 
 ## Can I run this?
 
