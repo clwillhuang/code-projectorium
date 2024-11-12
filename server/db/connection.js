@@ -5,7 +5,7 @@ module.exports = {
         try {
             mongoose.set('strictQuery', true);
             mongoose.Schema.Types.String.checkRequired(v => typeof v === 'string');
-            await mongoose.connect(process.env.ATLAS_URI, {
+            await mongoose.connect(process.env.MONGODB_URI, {
                 useNewUrlParser: true, useUnifiedTopology: true
             }, async () => {
                 console.log("Successfully connected to MongoDB.");

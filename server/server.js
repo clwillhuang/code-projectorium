@@ -26,7 +26,7 @@ app.use(session({
 	resave: true,
 	saveUninitialized: true,
 	store: MongoStore.create({
-		mongoUrl: process.env.ATLAS_URI,
+		mongoUrl: process.env.MONGODB_URI,
 		ttl: 60 * 60 * 24, // max lifetime of session, in seconds
 		crypto: {
 			secret: process.env.CRYPTO_SECRET
