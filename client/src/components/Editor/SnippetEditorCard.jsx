@@ -9,11 +9,12 @@ import * as styles from './SnippetEditorCard.module.css'
 import Languages from '../../utils/languageOptions'
 import CommentDeleteCard from './CommentDeleteCard';
 import CommentSection from '../CommentSection';
+import apiUrl from '../../utils/apiUrl';
 
 export default function SnippetEditorCard({ model, madeChanges, loadSnippetQueryKey, snippetId, parentQueryKey }) {
     const [isEdit, setIsEdit] = useState(false);
     const [editorValue, setEditorValue] = useState({ model, madeChanges });
-    const url = `http://localhost:5000/snippets/${snippetId}`;
+    const url = `${apiUrl}/snippets/${snippetId}`;
 
     // refresh state on receiving new code, markdown, madeChanges data
     useEffect(() => {

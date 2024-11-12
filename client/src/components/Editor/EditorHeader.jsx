@@ -5,6 +5,7 @@ import { useMutation, useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
 import * as styles from './EditorHeader.module.css'
 import ProjectEditorModal from "./ProjectEditorModal";
+import apiUrl from "../../utils/apiUrl";
 
 const EditorHeader = ({ projectId, name, published, description }) => {
 
@@ -15,7 +16,7 @@ const EditorHeader = ({ projectId, name, published, description }) => {
 
     const deleteProject = useMutation({
         mutationFn: () => {
-            return fetch(`http://localhost:5000/projects/${projectId}`, {
+            return fetch(`${apiUrl}/projects/${projectId}`, {
                 method: 'DELETE',
                 mode: 'cors',
                 credentials: 'include',
@@ -37,7 +38,7 @@ const EditorHeader = ({ projectId, name, published, description }) => {
     // update the page title 
     const patchProject = useMutation({
         mutationFn: newData => {
-            return fetch(`http://localhost:5000/projects/${projectId}`, {
+            return fetch(`${apiUrl}/projects/${projectId}`, {
                 method: 'PATCH',
                 mode: 'cors',
                 credentials: 'include',

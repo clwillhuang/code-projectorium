@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path")
 const app = express();
 
 const cors = require("cors");
@@ -35,12 +36,14 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use(require("./routes/project"));
 app.use(require("./routes/snippet"));
 app.use(require("./routes/page"));
-app.use(require('./routes/view'))
+app.use(require('./routes/view'));
 app.use(require("./routes/users"));
 app.use(require("./routes/comment"));
+
 const { UserModel } = require("./models/User");
 passport.use(new passportLocalStrategy(UserModel.authenticate()));
 passport.serializeUser(UserModel.serializeUser());
@@ -59,7 +62,7 @@ const options = {
         },
         "servers": [
             {
-                "url": "http://localhost:5000"
+                "url": "http://code-projectorium.vercel.app/api/v1/"
             }
         ]
     },
@@ -71,11 +74,11 @@ const swaggerSpec = swaggerJsDoc(options)
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-app.listen(5000, () => {
+app.listen(port, () => {
 	// perform a database connection when server starts
 	connectMongoose(function (err) {
 		if (err) console.error(err);
 
 	});
-	console.log(`Server is running on port: ${port}`);
+	console.log(`Server is running on port: ${port}. Files served from ${path.join(__dirname, 'dist')}`);
 });

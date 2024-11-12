@@ -6,10 +6,11 @@ import PageControls from "../PageControls";
 import SnippetCard from "../SnippetCard";
 import * as styles from './PageReader.module.css'
 import SnippetReaderCard from "./SnippetReaderCard";
+import apiUrl from "../../utils/apiUrl";
 
 const PageReader = ({ id, onPreviousPage, onNextPage }) => {
     const allSnippetsQueryKey = `retrieve-page-${id}`
-    const url = `http://localhost:5000/view/pages/${id}`
+    const url = `${apiUrl}/view/pages/${id}`
 
     // retrieve all snippets under this page
     const { isLoading, isError, error, data } = useQuery(allSnippetsQueryKey,

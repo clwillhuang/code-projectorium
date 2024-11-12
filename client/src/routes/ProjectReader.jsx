@@ -7,13 +7,14 @@ import PageReader from '../components/Reader/PageReader';
 import ReaderSidebar from '../components/Reader/ReaderSidebar';
 import Wrapper from '../components/Wrapper';
 import * as styles from './ProjectDetail.module.css'
+import apiUrl from '../utils/apiUrl';
 
 const ProjectReader = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const pageId = searchParams.get('pageId')
     const { projectId } = useParams();
 
-    const url = `http://localhost:5000/view/projects/${projectId}`
+    const url = `${apiUrl}/view/projects/${projectId}`
     const queryString = `retrieve-project-${projectId}`
 
     const { isLoading, isError, error, data } = useQuery(queryString,

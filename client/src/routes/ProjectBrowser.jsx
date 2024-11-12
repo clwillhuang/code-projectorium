@@ -3,10 +3,11 @@ import { Row } from 'react-bootstrap'
 import { useQuery } from 'react-query'
 import Wrapper from '../components/Wrapper'
 import { ProjectViewCard } from '../components/Reader/ProjectViewCard'
+import apiUrl from '../utils/apiUrl'
 
 const ProjectBrowser = () => {
     const { isLoading, isError, data } = useQuery('allProjects', () =>
-        fetch('http://localhost:5000/view/projects', {
+        fetch(`${apiUrl}/view/projects`, {
             method: 'GET',
             mode: 'cors',
             headers: {

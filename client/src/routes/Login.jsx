@@ -3,6 +3,7 @@ import { Button, Card, Form, Modal } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import Wrapper from '../components/Wrapper';
 import * as styles from './Login.module.css'
+import apiUrl from '../utils/apiUrl';
 
 export default function Login() {
     const redirectTimeout = 500;
@@ -17,7 +18,7 @@ export default function Login() {
         event.preventDefault();
         event.stopPropagation();
 
-        const url = `http://localhost:5000/users/login`
+        const url = `${apiUrl}/users/login`
         fetch(url, {
             method: 'POST',
             mode: 'cors',

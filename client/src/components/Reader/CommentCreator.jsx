@@ -5,6 +5,7 @@ import { MdCancel, MdComment, MdSend } from 'react-icons/md';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { Link } from 'react-router-dom';
 import * as styles from './CommentCreator.module.css'
+import apiUrl from '../../utils/apiUrl';
 
 export default function CommentCreator({ snippetId }) {
 
@@ -12,7 +13,7 @@ export default function CommentCreator({ snippetId }) {
     const [isTypingComment, setIsTypingComment] = useState(false);
     const [markdown, setMarkdown] = useState('')
 
-    const url = `http://localhost:5000/snippets/${snippetId}/comments`
+    const url = `${apiUrl}/snippets/${snippetId}/comments`
     const postCommentMutation = useMutation({
         mutationFn: (formData) => fetch(url, {
             method: 'POST',
@@ -32,7 +33,7 @@ export default function CommentCreator({ snippetId }) {
         }
     })
 
-    const userUrl = `http://localhost:5000/user`
+    const userUrl = `${apiUrl}/user`
     // Fetch user information
     const { isLoading, isError, data } = useQuery(`fetch-current-user`,
         () => fetch(userUrl, {

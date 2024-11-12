@@ -4,6 +4,7 @@ import { MdDelete, MdEdit, MdPublic, MdPublicOff} from 'react-icons/md';
 import { useMutation } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import * as styles from './ProjectEditCard.module.css'
+import apiUrl from '../../utils/apiUrl';
 
 export function ProjectEditCard({project}) {
     const { name, description, _id, published } = project;
@@ -11,7 +12,7 @@ export function ProjectEditCard({project}) {
 
     const deleteProject = useMutation({
         mutationFn: () => {
-            return fetch(`http://localhost:5000/projects/${projectId}`, {
+            return fetch(`${apiUrl}/projects/${projectId}`, {
                 method: 'DELETE',
                 mode: 'cors',
                 credentials: 'include',

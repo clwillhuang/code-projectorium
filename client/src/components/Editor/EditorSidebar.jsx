@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import { MdAdd } from "react-icons/md";
 import { useQueryClient } from "react-query";
 import * as styles from './EditorSidebar.module.css'
+import apiUrl from "../../utils/apiUrl";
 
 const EditorSidebar = ({ projectId, pages, selectedPageId, onChangePageId }) => {
     const queryClient = useQueryClient();
@@ -16,7 +17,7 @@ const EditorSidebar = ({ projectId, pages, selectedPageId, onChangePageId }) => 
             title: `New page`
         }
 
-        fetch(`http://localhost:5000/projects/${projectId}/pages`, {
+        fetch(`${apiUrl}/projects/${projectId}/pages`, {
             method: 'POST',
             mode: 'cors',
             credentials: 'include',

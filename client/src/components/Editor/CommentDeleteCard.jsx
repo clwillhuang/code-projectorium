@@ -4,6 +4,7 @@ import { Button } from "react-bootstrap";
 import { MdDelete } from "react-icons/md";
 import * as styles from '../Reader/CommentReaderCard.module.css'
 import { useQueryClient } from "react-query";
+import apiUrl from "../../utils/apiUrl";
 
 // Render a card that shows a comment to the project editor, allowing the user to delete the card
 const CommentDeleteCard = ({comment, snippetQueryKey }) => {
@@ -23,7 +24,7 @@ const CommentDeleteCard = ({comment, snippetQueryKey }) => {
     }
 
     const deleteComment = () => {
-        fetch(`http://localhost:5000/comments/${_id}`, {
+        fetch(`${apiUrl}/comments/${_id}`, {
             method: 'DELETE',
             mode: 'cors',
             credentials: 'include',

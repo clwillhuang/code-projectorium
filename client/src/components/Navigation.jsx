@@ -3,15 +3,16 @@ import { Button, Container, Modal, Nav, Navbar } from 'react-bootstrap'
 import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import * as styles from "./Navigation.module.css"
+import apiUrl from '../utils/apiUrl';
 
 const NavigationBar = () => {
 
-    const url = `http://localhost:5000/user`
+    const url = `${apiUrl}/user`
     const navigate = useNavigate();
     const [authError, setAuthError] = useState(undefined);
 
     const logout = () => {
-        fetch(`http://localhost:5000/users/logout`, {
+        fetch(`${apiUrl}/users/logout`, {
             method: 'POST',
             mode: 'cors',
             credentials: 'include',

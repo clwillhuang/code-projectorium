@@ -8,6 +8,7 @@ import SnippetCard from "../SnippetCard";
 import SnippetEditorCard from "./SnippetEditorCard";
 import EditableTitle from "./EditableTitle";
 import PageControls from "../PageControls";
+import apiUrl from "../../utils/apiUrl";
 
 
 const PageEditor = ({ id, onPreviousPage, onNextPage }) => {
@@ -15,7 +16,7 @@ const PageEditor = ({ id, onPreviousPage, onNextPage }) => {
     const pageTitleElementId = 'pageTitle';
     const queryClient = useQueryClient();
     const allSnippetsQueryKey = `retrieve-page-${id}`
-    const url = `http://localhost:5000/pages/${id}`
+    const url = `${apiUrl}/pages/${id}`
 
     const [editTitle, setEditTitle] = useState(false);
 
@@ -47,7 +48,7 @@ const PageEditor = ({ id, onPreviousPage, onNextPage }) => {
     // update the page title 
     const patchPageMutation = useMutation({
         mutationFn: newData => {
-            fetch(`http://localhost:5000/pages/${id}`, {
+            fetch(`${apiUrl}/pages/${id}`, {
                 method: 'PATCH',
                 mode: 'cors',
                 credentials: 'include',
@@ -76,7 +77,7 @@ const PageEditor = ({ id, onPreviousPage, onNextPage }) => {
     // delete this page
     const deletePageMutation = useMutation({
         mutationFn: () => {
-            fetch(`http://localhost:5000/pages/${id}`, {
+            fetch(`${apiUrl}/pages/${id}`, {
                 method: 'DELETE',
                 mode: 'cors',
                 credentials: 'include',
@@ -107,7 +108,7 @@ const PageEditor = ({ id, onPreviousPage, onNextPage }) => {
             code: '',
         }
 
-        fetch(`http://localhost:5000/pages/${id}/snippets`, {
+        fetch(`${apiUrl}/pages/${id}/snippets`, {
             method: 'POST',
             mode: 'cors',
             credentials: 'include',

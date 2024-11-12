@@ -3,6 +3,7 @@ import { Button, Form, Modal } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import Wrapper from '../components/Wrapper';
 import * as styles from './Login.module.css'
+import apiUrl from '../utils/apiUrl';
 
 export default function Register() {
     const redirectTimeout = 500;
@@ -46,7 +47,7 @@ export default function Register() {
 
 
 
-        const url = `http://localhost:5000/users/register`
+        const url = `${apiUrl}/users/register`
         fetch(url, {
             ...fetchOptions,
             body: JSON.stringify(formData),

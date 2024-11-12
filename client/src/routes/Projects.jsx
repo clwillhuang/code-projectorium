@@ -4,12 +4,13 @@ import { useQuery } from 'react-query'
 import CreateProjectModal from '../components/Editor/CreateProjectModal'
 import Wrapper from '../components/Wrapper'
 import { ProjectEditCard } from '../components/Editor/ProjectEditCard'
+import apiUrl from '../utils/apiUrl'
 
 const Projects = () => {
     const [modalShow, setModalShow] = useState(false);
 
     const { isLoading, isError, error, data } = useQuery('allProjects', () =>
-        fetch('http://localhost:5000/projects', {
+        fetch(`${apiUrl}/projects`, {
             method: 'GET',
             mode: 'cors',
             credentials: 'include',

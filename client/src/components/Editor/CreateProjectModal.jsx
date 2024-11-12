@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import apiUrl from '../../utils/apiUrl';
 
 const CreateProjectModal = ({ modalShow, closeModal }) => {
 
@@ -14,7 +15,7 @@ const CreateProjectModal = ({ modalShow, closeModal }) => {
         e.preventDefault();
         e.stopPropagation();
 
-        fetch('http://localhost:5000/projects', {
+        fetch(`${apiUrl}/projects`, {
             mode: 'cors',
             credentials: 'include',
             method: 'POST',

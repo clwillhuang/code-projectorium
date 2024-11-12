@@ -1,9 +1,10 @@
 import React from 'react';
 import { useQuery } from 'react-query'
+import apiUrl from '../utils/apiUrl';
 
 // Fetch data, and pass it to the appropriate components
 export default function SnippetCard({ RenderComponent, snippetId, ...props }) {
-    const url = `http://localhost:5000/view/snippets/${snippetId}`;
+    const url = `${apiUrl}/view/snippets/${snippetId}`;
     // key to load the current snippet
     const loadSnippetQueryKey = `load-snippet-${snippetId}`;
 
