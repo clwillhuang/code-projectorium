@@ -82,3 +82,5 @@ app.listen(port, () => {
 	});
 	console.log(`Server is running on port: ${port}. Files served from ${path.join(__dirname, 'dist')}`);
 });
+
+module.exports = app
