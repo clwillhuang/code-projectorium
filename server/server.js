@@ -13,7 +13,7 @@ require("dotenv").config({ path: "./config.env" });
 const port = process.env.PORT || 5000;
 
 app.use(cors({
-	origin: "http://localhost:5173",
+	origin: process.env.CORS_ALLOWED_ORIGIN,
 	credentials: true,
 }));
 
@@ -62,7 +62,7 @@ const options = {
         },
         "servers": [
             {
-                "url": "http://code-projectorium.vercel.app/api/v1/"
+                "url": process.env.CORS_ALLOWED_ORIGIN
             }
         ]
     },
