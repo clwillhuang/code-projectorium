@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path")
 const app = express();
+require('dotenv').config();
 
 const cors = require("cors");
 const passport = require("passport")
@@ -9,14 +10,13 @@ const passportLocalStrategy = require("passport-local")
 const session = require("express-session")
 const MongoStore = require("connect-mongo");
 const { connectMongoose } = require("./db/connection");
-require("dotenv").config({ path: "./config.env" });
 const port = process.env.PORT || 5000;
 
 app.use(cors({
 	origin: process.env.CORS_ALLOWED_ORIGIN,
 	credentials: true,
 }));
-
+ 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -43,6 +43,12 @@ app.use(require("./routes/page"));
 app.use(require('./routes/view'));
 app.use(require("./routes/users"));
 app.use(require("./routes/comment"));
+
+app.route('/status').get(async (req, res) => {
+	res.send({
+		'message': `Server is up and running in ${process.env.SERVER_MODE}`
+	})
+})
 
 const { UserModel } = require("./models/User");
 passport.use(new passportLocalStrategy(UserModel.authenticate()));
