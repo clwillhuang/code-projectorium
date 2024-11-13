@@ -3,6 +3,7 @@ server/node_modules/
 vite-bs-test/
 
 *.env
+!.example.env
 
 .DS_STORE
 node_modules

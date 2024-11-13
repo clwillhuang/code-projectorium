@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  server:
+    build: "./server"
+    env_file: "./server/.env"
+    ports:
+      - ${PORT}:${PORT}
+    restart: always

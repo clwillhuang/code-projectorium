@@ -21,7 +21,12 @@ This was mainly a personal project to develop my skills in the MERN stack (Mongo
 
 ## Can I run this?
 
-Unfortunately, this repository is not set up to be easily cloned and run on a separate machine. It also requires you to have your own MongoDB cluster set up. Time allowing, screenshots and detailed docs will follow in the future!
+Configure the server secrets and settings in `.env` following the example in `.example.env`. On MongoDB, create a new collection called `live-projectorium` in your cluster.
+
+Finally, run the server using docker compose.
+```
+docker compose up --build server
+```
 
 
 
